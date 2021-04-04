@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles/bmi.css">
+    
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    </head>
+    <body>
+
+        <div class ="bmi-container">
+            <h1>
+                BMI Calculator
+            </h1>
+
+            <form onsubmit="return calcBMI();"> 
+                <label>
+                    <input type="radio" id="metric" name="measure" onchange="measureBMI()" checked/> Metric (CM/KG)
+                </label>
+    
+                <label>
+                    <input type="radio" id="imperial" name="measure" onchange="measureBMI()"/> Imperial (IN/LBs)
+                </label>
+                <br><br>
+
+                <p> 
+                    <label>Height in CM/IN</label> 
+                    <input type="text" id="height" min="54" max="272" required>
+                    <span id = "height-unit">CM</span>
+                </p>
+
+                <p> 
+                    <label>Weight in KG/LBs</label> 
+                    <input type="text" id="weight" min="1" max="635" required>
+                    <span id = "height-unit">KG</span>
+                </p>
+
+                <div>
+                    <input type="submit" class = buttonId value="Calculate BMI"/>
+                </div>
+                <div id="results"></div>
+
+                <div class="weight-guide">
+                    <h3>BMI Guide</h3>
+                    <p>Under Weight = Less than 18.6</p>
+                    <p>Normal Range = 18.6 - 24.9</p>
+                    <p>Overweight = 25 - 29,9</p>
+                    <p>Pre-Obese = 30.0 - 35.0</p>
+                    <p>Obesity Class I = 30.0 - 35.0</p>
+                    <p>Obesity Class II = 35.0 - 40.0</p>
+                    <p>Obesity Class III = 40+</p>
+                </div>
+    
+                <div id="note">
+                    <p>NOTE: The BMI now is very inaccurate if you are physically active due to not considering muscle mass.</p>
+                </div>
+            </form>
+        </div>
+
+    </body>
+    <script src="scripts/bmi.js"></script>
+        <script src="scripts/cals.js"></script>
+</html>
